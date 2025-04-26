@@ -1,0 +1,32 @@
+﻿@page
+@model student_management_system.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/create.css" />
+}
+
+
+<h1>Create Student</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Student.Name" class="form-label"></label>
+        <input asp-for="Student.Name" class="form-control" />
+        <span asp-validation-for="Student.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Student.Age" class="form-label"></label>
+        <input asp-for="Student.Age" class="form-control" />
+        <span asp-validation-for="Student.Age" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Student.Email" class="form-label"></label>
+        <input asp-for="Student.Email" class="form-control" />
+        <span asp-validation-for="Student.Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

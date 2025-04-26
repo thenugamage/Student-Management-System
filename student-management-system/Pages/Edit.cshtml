@@ -1,0 +1,33 @@
+﻿@page
+@model student_management_system.Pages.EditModel
+@{
+    ViewData["Title"] = "Edit Student";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/edit.css" />
+}
+
+
+<h1>Edit Student</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Student.Id" />
+    <div class="mb-3">
+        <label asp-for="Student.Name" class="form-label"></label>
+        <input asp-for="Student.Name" class="form-control" />
+        <span asp-validation-for="Student.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Student.Age" class="form-label"></label>
+        <input asp-for="Student.Age" class="form-control" />
+        <span asp-validation-for="Student.Age" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Student.Email" class="form-label"></label>
+        <input asp-for="Student.Email" class="form-control" />
+        <span asp-validation-for="Student.Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>

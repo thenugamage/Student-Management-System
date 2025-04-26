@@ -1,0 +1,39 @@
+﻿@page
+@model student_management_system.Pages.IndexModel
+@{
+    ViewData["Title"] = "Student List";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/index.css" />
+}
+
+
+<h1>Student List</h1>
+
+<a class="btn btn-primary mb-3" asp-page="Creat">Add New Student</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Email</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-page="Edit" asp-route-id="@student.Id">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

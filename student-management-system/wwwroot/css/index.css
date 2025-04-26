@@ -1,0 +1,17 @@
+﻿h1 {
+    color: #2c3e50;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+    }
+
+.btn {
+    margin-right: 8px;
+}
